@@ -19,3 +19,5 @@
     - Cada produto tem um nome, uma lista de categorias às quais pertence e uma quantidade disponível em estoque;
     - Quando um produto é comprado, sua quantidade disponível em estoque é reduzida;
     - O mercado mantém um registro de todas as transações realizadas, incluindo detalhes como data da compra, cliente envolvido e quantidade de produtos comprados;
+  
+# A minha **escolha** para desenvolver este projeto **é a opção 1**
