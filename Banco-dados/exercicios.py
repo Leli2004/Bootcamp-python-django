@@ -14,9 +14,9 @@ conexao.commit()
 
 ## 3. Consultas Básicas: Escreva consultas SQL para realizar as seguintes tarefas:
 # a - Selecionar todos os registros da tabela "alunos"
-dados = cursor.execute('SELECT nome FROM alunos')
-for usuarios in dados:
-    print(dados)
+#dados = cursor.execute('SELECT nome FROM alunos')
+#for usuarios in dados:
+#    print(dados)
 
 # b - Selecionar o nome e a idade dos alunos com mais de 20 anos
 #dados = cursor.execute('SELECT nome, idade FROM alunos WHERE idade>20')
@@ -27,12 +27,12 @@ for usuarios in dados:
 
 # d - Contar o número total de alunos na tabela
 
-
 ## 4. Atualização e Remoção: Atualize a idade de um aluno específico na tabela e Remova um aluno pelo seu ID
 # dados = 
 # cursor.execute('UPDATE alunos SET idade="20" WHERE nome="Danieli"')
-cursor.execute('DELETE FROM alunos where id=1')
+#cursor.execute('DELETE FROM alunos where id=1')
 
+########################################################################
 ## 5. Criar uma Tabela e Inserir Dados: Crie uma tabela chamada "clientes" com os campos: 
 # id (chave primária), nome (texto), idade (inteiro) e saldo (float). 
 
@@ -41,19 +41,20 @@ cursor.execute('DELETE FROM alunos where id=1')
 
 ## 6. Consultas e Funções Agregadas: Escreva consultas SQL para realizar as seguintes tarefas
 # a - Selecione o nome e a idade dos clientes com idade superior a 30 anos
-
 # b - Calcule o saldo médio dos clientes
-
 # c - Encontre o cliente com o saldo máximo
-
 # d - Conte quantos clientes têm saldo acima de 1000
 
 
 ## 7. Atualização e Remoção com Condições: Atualize o saldo de um cliente e Remova um cliente pelo seu ID
-   
+
+
+#for usuarios in dados:
+#    print(dados)
+
 conexao.close()
 
-##########################################
+########################################################################
 ## 8. Junção de Tabelas: Crie uma segunda tabela chamada "compras" com os campos: id (chave primária), 
 # cliente_id (chave estrangeira referenciando o id da tabela "clientes"), produto (texto) e valor (real). 
 # Insira algumas compras associadas a clientes existentes na tabela "clientes". Escreva uma 
