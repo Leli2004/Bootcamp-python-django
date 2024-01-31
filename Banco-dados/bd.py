@@ -19,8 +19,7 @@ cursor = conexao.cursor()
 #cursor.execute('DROP TABLE produtos')
 
 conexao.commit() # chama a conexão
-conexao.close()  # encerra o processe
-
+conexao.close()  # encerra o processo
 
 #################### Para alterar atributos da tabela
 ## delete

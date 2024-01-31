@@ -5,4 +5,4 @@ class Pessoa:
         print(f'Oi, meu nome é {self.nome}')
  
 pessoa = Pessoa() 
-pessoa.falar_oi() 
+pessoa.falar_oi()  
