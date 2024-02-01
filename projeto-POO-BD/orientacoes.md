@@ -1,8 +1,8 @@
 # Exercícios Orientação a objetos e Banco de Dados - semana 4
 
-### Baseado nos conteúdso abordados do curso de Orientação a Objetos e Banco de Dados
+### Baseado nos conteúdso abordados nos cursos de Orientação a Objetos e Banco de Dados
 
-##### POO:
+#### POO:
 
 1. **OPÇÃO 1: Gerenciamento de Biblioteca**
     Vamos criar um sistema orientado a objetos para representar um sistema de biblioteca seguindo os requisitos abaixo
@@ -23,7 +23,7 @@
     - O mercado mantém um registro de todas as transações realizadas, incluindo detalhes como data da compra, cliente envolvido e quantidade de produtos comprados;
 
 
-##### BD:
+#### BD:
 
 1. **OPÇÃO 1: Exercício Gerenciamento Biblioteca**
 
