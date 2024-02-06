@@ -24,4 +24,3 @@ class Usuario():
         self.nome = nome
         self.telefone = telefone
         self.nacionalidade = nacionalidade
-
