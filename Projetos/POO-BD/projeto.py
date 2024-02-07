@@ -177,6 +177,7 @@ for empresta in empresta_values:
 #cursor.execute('DELETE FROM Usuarios where id_user=5')
 #cursor.execute('UPDATE Usuarios SET nome="Marli" WHERE nome="Daiane"')
 #cursor.execute('UPDATE Livros SET emprestado="0" WHERE id_livro="3"')
+#cursor.execute('DELETE FROM Emprestimos WHERE id_emp="3"')
 
 conexao.commit() 
 conexao.close()
