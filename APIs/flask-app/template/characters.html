@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">  
+    <!-- importado boostrap 5.3 -->
+    <title>Flask API</title>
+</head>
+<body>
+    <h1>Listando personagens com Flask</h1>
+    <div>
+        <!-- para template com flask -->
+        {% block content %}
+
+            {% for character in characters %}
+                <div class="">
+                    <h2>{{character.name}}</h2>
+                </div>
+            {% endfor %}
+
+        {% endblock %}
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>  
+</body>
+<footer style="text-align: center;"> <br><br>
+    <hr>
+    2024 - curso promovido por Womarkers Code<br>
+    Danieli do N. Dalla Vecchia 
+    <hr>
+</footer>
+</html>

@@ -11,18 +11,25 @@
 '''
 
 #importar flask:
-from flask import Flask
+from flask import Flask, render_template
 
 import urllib.request, json
 
 app = Flask(__name__)
 
-#criar rota:
-@app.route("/")
+@app.route("/") 
+def get_list_characters_page():
+    url = "https://rickandmortyapi.com/api/character/"
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dicionario = json.load(data)
 
+    return render_template("characters.html", characters=dicionario["results"]) 
+
+
+@app.route("/lista")
 #def hello():
 #    return '<h1>Olá, mundo!</h1>'
-
 def get_list_characters():
 
     url = "https://rickandmortyapi.com/api/character/"
