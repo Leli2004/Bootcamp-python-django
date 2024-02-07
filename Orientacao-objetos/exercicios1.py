@@ -31,7 +31,6 @@ print(' ')
 # 5. Faça o carro "andar" utilizando os métodos da sua classe
 carro.liga()
 carro.acelera()
-
 # 6. Faça o carro "parar" utilizando os métodos da sua classe
 carro.desacelera()
 carro.desliga()
