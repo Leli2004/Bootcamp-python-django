@@ -5,10 +5,11 @@ Documentação sobre JSON:
 Construir uma aplicação consumindo uma API pública
 - Postman: http://postman.com/ 
 - API pública: https://rickandmortyapi.com/ 
-- Flask: 
+- Flask: https://flask.palletsprojects.com/en/3.0.x/ 
 
 Flask:
-1. py -3 -m venv .venv  #criando a pasta venv
-2. .\.venv.\Scripts\activate 
-3. pip install Flask #baixar flask
-4. flask --app app run #ativar o servidor local e rodar o arquivo
+1. py -m venv my-venv
+2. my-venv\Scripts\activate
+3. pip install Flask
+4. set FLASK_APP=app
+5. flask run
