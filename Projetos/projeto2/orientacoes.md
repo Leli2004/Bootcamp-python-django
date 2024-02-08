@@ -1,1 +1,0 @@
-## orinetações do projeto
