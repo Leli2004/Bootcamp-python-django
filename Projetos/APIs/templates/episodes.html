@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem episodes</title>
+</head>
+<body>
+    <h1>Listando episódios com Flask</h1>
+    <div>
+        <!-- para template com flask -->
+        {% block content %}
+
+            {% for episode in episodes %}
+                <div class="">
+                    <p>Nome: {{episode.name}} | air_date: {{episode.air_date}} | episode: {{episode.episode}}</p>
+                </div>
+            {% endfor %}
+
+        {% endblock %}
+    </div>
+</body>
+</html>
