@@ -13,13 +13,30 @@
     <div>
         <!-- para template com flask -->
         {% block content %}
-
-            {% for character in characters %}
-                <div class="">
-                    <p>{{character.name}} ({{character.status}})</p>
-                </div>
-            {% endfor %}
-
+            <div class="">
+            <table>
+                <tr>
+                    <th>Nome</th>
+                    <th>Imagem</th>
+                    <th>Status</th>
+                    <th>Espécie</th>
+                    <th>Gênero</th>
+                    <th>Origem</th>
+                    <th>Localização</th>
+                </tr>
+                {% for character in characters %}
+                    <tr>
+                        <td>{{character.name}}</td>
+                        <td><img src="{{character.image}}" width="100px"> </td>
+                        <td>{{character.status}}</td>
+                        <td>{{character.species}}</td>
+                        <td>{{character.gender}}</td>
+                        <td>{{character.origin.name}} (<a href="{{character.origin.url}}" target="_blank">Ver local</a>)</td>
+                        <td>{{character.location.name}} (<a href="{{character.location.url}}" target="_blank">Ver local</a>)</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            </div>
         {% endblock %}
     </div>
 

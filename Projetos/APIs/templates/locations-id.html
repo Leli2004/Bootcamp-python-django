@@ -3,37 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listagem locations</title>
+    <title>Listagem location</title>
 </head>
 <body>
-    <h1>Listando localizações com Flask</h1>
+    <h1>Listando localização com Flask</h1>
     <p>
         <ul>
             <li>Clique <a href="locations">AQUI</a> para ver a listagem de todas as localizações.</li>
             <li>Para ver uma localização específica, informe o ID na rota.</li>
         </ul>
     </p>
-    <div>
+        <div>
         <!-- para template com flask -->
         {% block content %}
             <div class="">
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Type</th>
-                    <th>Dimension</th>
-                </tr>
-                {% for location in locations %}
-                    <tr>
-                        <td>{{location.id}}</a></td>
-                        <td>{{location.name}}</td>
-                        <td>{{location.type}}</td>
-                        <td>{{location.dimension}}</td>
-                    </tr>
-                {% endfor %}
-            </table>
-            </div>
+            {% for locationId in locationsId %}
+                <p>ID: {{locationId.id}} </p>
+                <p>Nome: {{locationId.name}} </p>
+                <p>Type: {{locationId.type}} </p>
+                <p>Residentes: {{locationId.residents}} </p>
+            {% endfor %}
         {% endblock %}
     </div>
 

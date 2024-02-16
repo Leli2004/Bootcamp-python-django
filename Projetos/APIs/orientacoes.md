@@ -27,7 +27,7 @@ Para isso, você deverá:
 ### Desafio Rick and Morty
 
 #### Sobre a apresentação:
-A apresentação terá 5 minutos de duração para cada squad e ao menos duas integrantes devem apresentar, mas todas precisam participar da resolução dos exercícios. Uma das integrantes também deve compartilhar a tela para apresentar com  o desafio do Google Colab ou slide. Sugerimos que realizem um ensaio previamente e façam a melhor gestão do tempo. 
+A apresentação terá 5 minutos de duração para cada squad e ao menos duas integrantes devem apresentar, mas todas precisam participar da resolução dos exercícios. Uma das integrantes também deve compartilhar a tela para apresentar com o desafio do Google Colab ou slide. Sugerimos que realizem um ensaio previamente e façam a melhor gestão do tempo. 
 
 Vocês devem explicar na apresentação:
 1. A lógica utilizada para a solução do desafio;

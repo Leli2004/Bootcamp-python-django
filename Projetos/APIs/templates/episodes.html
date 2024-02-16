@@ -10,14 +10,29 @@
     <div>
         <!-- para template com flask -->
         {% block content %}
-
-            {% for episode in episodes %}
-                <div class="">
-                    <p>Nome: {{episode.name}} | air_date: {{episode.air_date}} | episode: {{episode.episode}}</p>
-                </div>
-            {% endfor %}
-
+            <div class="">
+            <table>
+                <tr>
+                    <th>Nome do episódio</th>
+                    <th>Air date (data de exibição)</th>
+                    <th>Código</th>
+                </tr>
+                {% for episode in episodes %}
+                    <tr>
+                        <td>{{episode.name}}</td>
+                        <td>{{episode.air_date}}</td>
+                        <td>{{episode.episode}} (<a href="{{episode.id}}">Ver episódio</a>)</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            </div>
         {% endblock %}
     </div>
 </body>
+<footer style="text-align: center;"> <br><br>
+    <hr>
+    2024 - curso promovido por Womarkers Code<br>
+    Danieli do N. Dalla Vecchia 
+    <hr>
+</footer>
 </html>

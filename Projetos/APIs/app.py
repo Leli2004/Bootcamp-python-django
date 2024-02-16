@@ -11,8 +11,7 @@ app = Flask(__name__)  #varíavel que trabalha com flask
 
 @app.route("/")
 def main():
-    return '<h1>Hello with Flask!</h1> <p><a href="/characters">Ver listagem de personagens</a></p> <p><a href="/locations">Ver listagem de localizações</a></p> <p><a href="/episodes">Ver listagem de episódios</a></p> <br> <p><a href="/json_characters">Ver listagem de personagens em JSON</a></p> <p><a href="/json_episodes">Ver listagem de episódios em JSON</a></p> <p><a href="/json_locations">Ver listagem de localizações em JSON</a></p>'
-
+    return render_template("index.html")
 
 # Rota para chama o arquivo listagem-character.html
 @app.route("/characters")
@@ -37,8 +36,12 @@ def lista_character_json():
     for character in dicionario["results"]:
         character = {
             "name": character["name"],
+            "image": character["image"],
             "status": character["status"],
-            "species": character["species"]
+            "species": character["species"],
+            "gender": character["gender"],
+            "origin": character["origin"],
+            "location": character["location"]
         }
         characters.append(character)
 
@@ -86,6 +89,15 @@ def lista_locations():
 
     return render_template("locations.html", locations=dicionario["results"])
 
+@app.route("/locations/<id>")
+def lista_location_id(id):
+    url = "https://rickandmortyapi.com/api/location" + id
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dicionario = json.loads(data)
+
+    return render_template("locations-id.html", locationsId=dicionario)
+
 # Rota para listar localizações em JSON
 @app.route("/json_locations")
 def lista_locations_json():
@@ -95,13 +107,17 @@ def lista_locations_json():
     dicionario = json.loads(locations)
 
     locations = []
+    locationsId = []
 
     for location in dicionario["results"]:
         location = {
+            "id": location["id"],
             "name": location["name"],
             "type": location["type"],
-            "dimension": location["dimension"]
+            "dimension": location["dimension"],
+            "residents": location["residents"]
         }
         locations.append(location)
 
     return {"locations": locations}
+
