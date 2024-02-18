@@ -13,7 +13,7 @@ app = Flask(__name__)  #varíavel que trabalha com flask
 def main():
     return render_template("index.html")
 
-# Rota para chama o arquivo listagem-character.html
+# Rota para chama o arquivo character.html
 @app.route("/characters")
 def lista_characters():
     url = "https://rickandmortyapi.com/api/character/"
@@ -23,32 +23,61 @@ def lista_characters():
 
     return render_template("character.html", characters=dicionario["results"])
 
+# Rota para chama o arquivo character-id.html
+@app.route("/characters/<id>")
+def lista_characters_id(id):
+    url = "https://rickandmortyapi.com/api/character/" + id
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dicio = json.loads(data)
+
+    return render_template("character-id.html", charactersId=dicio)
+
 # Rota para listar personagens em JSON
 @app.route("/json_characters")
 def lista_character_json():
     url = "https://rickandmortyapi.com/api/character/"
     response = urllib.request.urlopen(url)
     characters = response.read()
+    charactersId = response.read()
     dicionario = json.loads(characters)
+    dicio = json.loads(characters)
 
     characters = []
+    charactersId = []
 
     for character in dicionario["results"]:
         character = {
+            "id": character["id"],
             "name": character["name"],
             "image": character["image"],
             "status": character["status"],
             "species": character["species"],
             "gender": character["gender"],
             "origin": character["origin"],
-            "location": character["location"]
+            "location": character["location"],
+            "episode": character["episode"]
         }
         characters.append(character)
 
-    return {"characters": characters}
+    for characterId in dicio["results"]:
+        characterId = {
+            "id": characterId["id"],
+            "name": characterId["name"],
+            "image": characterId["image"],
+            "status": characterId["status"],
+            "species": characterId["species"],
+            "gender": characterId["gender"],
+            "origin": characterId["origin"],
+            "location": characterId["location"],
+            "episode": characterId["episode"]
+        }
+        charactersId.append(characterId)
+
+    return {"characters": characters, "charactersId": charactersId}
 
 
-# Rota para chama o arquivo listagem-episodes.html
+# Rota para chama o arquivo episodes.html
 @app.route("/episodes")
 def lista_episodes():
     url = "https://rickandmortyapi.com/api/episode"
@@ -58,15 +87,28 @@ def lista_episodes():
 
     return render_template("episodes.html", episodes=dicionario["results"])
 
+# Rota para chama o arquivo episodes-id.html
+@app.route("/episodes/<id>")
+def lista_episodes_id(id):
+    url = "https://rickandmortyapi.com/api/episode/" + id
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dicio = json.loads(data)
+
+    return render_template("episode-id.html", episodesId=dicio)
+
 # Rota para listar episodios em JSON
 @app.route("/json_episodes")
 def lista_episodes_json():
     url = "https://rickandmortyapi.com/api/episode"
     response = urllib.request.urlopen(url)
     episodes = response.read()
+    episodesId = response.read()
     dicionario = json.loads(episodes)
+    dicio = json.loads(episodes)
 
     episodes = []
+    episodesId = []
 
     for episode in dicionario["results"]:
         episode = {
@@ -76,10 +118,18 @@ def lista_episodes_json():
         }
         episodes.append(episode)
 
-    return {"episodes": episodes}
+    for episodeId in dicio["results"]:
+        episodeId = {
+            "name": episodeId["name"],
+            "air_date": episodeId["air_date"],
+            "episode": episodeId["episode"]
+        }
+        episodesId.append(episodeId)
+    
+    return {"episodes": episodes, "episodesId": episodesId}
 
 
-# Rota para chama o arquivo listagem-locations.html
+# Rota para chama o arquivo locations.html
 @app.route("/locations")
 def lista_locations():
     url = "https://rickandmortyapi.com/api/location"
@@ -89,14 +139,15 @@ def lista_locations():
 
     return render_template("locations.html", locations=dicionario["results"])
 
+# Rota para chama o arquivo locations-id.html
 @app.route("/locations/<id>")
 def lista_location_id(id):
-    url = "https://rickandmortyapi.com/api/location" + id
+    url = "https://rickandmortyapi.com/api/location/" + id
     response = urllib.request.urlopen(url)
     data = response.read()
-    dicionario = json.loads(data)
+    dicio = json.loads(data)
 
-    return render_template("locations-id.html", locationsId=dicionario)
+    return render_template("locations-id.html", locationsId=dicio)
 
 # Rota para listar localizações em JSON
 @app.route("/json_locations")
@@ -104,7 +155,9 @@ def lista_locations_json():
     url = "https://rickandmortyapi.com/api/location"
     response = urllib.request.urlopen(url)
     locations = response.read()
+    locationsId = response.read()
     dicionario = json.loads(locations)
+    dicio = json.loads(locations)
 
     locations = []
     locationsId = []
@@ -119,5 +172,13 @@ def lista_locations_json():
         }
         locations.append(location)
 
-    return {"locations": locations}
+    for locationId in dicio["results"]:
+        locationId = {
+            "id": locationId["id"],
+            "name": locationId["name"],
+            "type": locationId["type"],
+            "residents": locationId["residents"]
+        }
+        locationsId.append(locationId)
 
+    return {"locations": locations, "locationsId": locationsId}

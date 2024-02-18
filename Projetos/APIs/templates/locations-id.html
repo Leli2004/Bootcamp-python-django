@@ -1,36 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listagem location</title>
-</head>
-<body>
-    <h1>Listando localização com Flask</h1>
-    <p>
-        <ul>
-            <li>Clique <a href="locations">AQUI</a> para ver a listagem de todas as localizações.</li>
-            <li>Para ver uma localização específica, informe o ID na rota.</li>
-        </ul>
-    </p>
-        <div>
-        <!-- para template com flask -->
-        {% block content %}
-            <div class="">
-            {% for locationId in locationsId %}
-                <p>ID: {{locationId.id}} </p>
-                <p>Nome: {{locationId.name}} </p>
-                <p>Type: {{locationId.type}} </p>
-                <p>Residentes: {{locationId.residents}} </p>
-            {% endfor %}
-        {% endblock %}
-    </div>
+{% extends 'layout.html' %}
 
-</body>
-<footer style="text-align: center;"> <br><br>
-    <hr>
-    2024 - curso promovido por Womarkers Code<br>
-    Danieli do N. Dalla Vecchia 
-    <hr>
-</footer>
-</html>
+{% block content %}
+    <div class="">
+        <h2>Infomações da localização</h2><br>
+        <p><b>Nome:</b> {{locationsId.name}} </p> 
+        <p><b>ID:</b> {{locationsId.id}} </p>
+        <p><b>Type:</b> {{locationsId.type}} </p>
+        <p><b>Residentes:</b> <br>{{locationsId.residents}} </p>
+{% endblock %}
