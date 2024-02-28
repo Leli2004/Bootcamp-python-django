@@ -10,7 +10,7 @@ Construir uma aplicação consumindo uma API pública
 
 Flask:
 1. py -m venv my-venv  #'my-venv' é o nome criado
-2. my-venv\Scripts\activate
+2. my-venv\Scripts\activate 
 3. pip install Flask
 4. set FLASK_APP=app  #app é o arquivo py
 5. flask run  ou  flask --app app run

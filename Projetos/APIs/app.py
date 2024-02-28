@@ -172,7 +172,7 @@ def lista_locations_json():
         }
         locations.append(location)
 
-    for locationId in dicio["results"]:
+    for locationId in dicio["result"]:
         locationId = {
             "id": locationId["id"],
             "name": locationId["name"],
