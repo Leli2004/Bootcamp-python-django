@@ -4,13 +4,12 @@
 - pip install virtualenv (instalação local do ambiente virtual)
 - python -m venv cadastro_curso_womakers (criação do ambiente virtual)
 - .\Scripts\activate (ativação do ambiente - é preciso estar na pasta criada)
-
-#### Comandos Django
 - pip install django (instalar django)
 - django-admin startproject projeto_womakers . (criar o projeto - 'projeto_womakers' é o nome escolhido)
-- python manage.py runserver (rodar o servidor)
+- python manage.py runserver (rodar o servidor, lembrar de estar com ambiente ativo)
 - python manage.py startapp base (começar novo aplicativo - 'base' é o nome escolhido)
 - Por fim, é preciso registrar o novo aplicativo no projeto, acrescentando seu nome no arquivo 'settings'
+- python manage.py createsuperuser (criar superuser via terminal para usar na rota padrão 'admin' - user: leli e senha: 123)
 
 #### Organização
 - Na pasta do projeto criado ficam as configurações gerais no projeto e na pasta base ficam as funcionalidades
