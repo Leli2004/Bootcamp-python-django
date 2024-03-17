@@ -20,4 +20,4 @@ def curso():
 
 @pytest.mark.django_db
 def test_str_deve_retornar_string(curso):
-    assert str(curso) == 'Java: 2024-03-13 - 20'
+    assert str(curso) == 'Java: 2024-03-14 - 20'
